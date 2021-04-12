@@ -1,0 +1,202 @@
+@import url("main.css");
+@import url("responsive.css");
+
+
+/*TITULO SECTION*/
+.section-title {
+  margin: 1em 1em 0;
+  font-size: 2.5em;
+  border-top: 3px solid rgb(164, 36, 59);
+}
+
+
+/* CONTENEDOR DEL SLIDER */
+.slider {
+  width: 800%;
+  animation: catalogo infinite alternate;
+}
+
+/* IMAGENES EN LAS SECCIONES DEL MAIN */
+.section-image {
+  width: 85%;
+  height: 250px;
+  border-radius: 10px;
+  filter: blur(1px);
+  transition: all 300ms ease-out;
+}
+
+.section-image:hover,
+.section-image:focus {
+  transform: scale(1.025);
+  filter: blur(0);
+}
+
+@media (max-width: 768px) {
+  .slider {
+    animation-duration: 60s;
+  }
+
+  /* ANIMACION MOBIL*/
+  @keyframes catalogo {
+    0% {
+      margin-left: 0%;
+    }
+
+    10% {
+      margin-left: 0%;
+    }
+
+    13% {
+      margin-left: -100%;
+    }
+
+    23% {
+      margin-left: -100%;
+    }
+
+    25% {
+      margin-left: -200%;
+    }
+
+    35% {
+      margin-left: -200%;
+    }
+
+    38% {
+      margin-left: -300%;
+    }
+
+    48% {
+      margin-left: -300%;
+    }
+
+    51% {
+      margin-left: -400%;
+    }
+
+    61% {
+      margin-left: -400%;
+    }
+
+    64% {
+      margin-left: -500%;
+    }
+
+    74% {
+      margin-left: -500%;
+    }
+
+    77% {
+      margin-left: -600%;
+    }
+
+    87% {
+      margin-left: -600%;
+    }
+
+    90% {
+      margin-left: -700%;
+    }
+
+    100% {
+      margin-left: -700%;
+    }
+  }
+
+  /* ANCHO A LAS COLUMNAS CON IMAGENES EN MOBIL */
+  .column {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* ANCHO DE LAS IMAGENES EN TABLET */
+  .slider-li {
+    width: 50%;
+  }
+
+  /* DURACION ANIMACION Y ANCHO DEL CONTENEDOR*/
+  .slider {
+    animation-duration: 40s;
+    width: 400%;
+  }
+
+  /* ANIMACION TABLET */
+  @keyframes catalogo {
+    0% {
+      margin-left: 0%;
+    }
+
+    20% {
+      margin-left: 0%;
+    }
+
+    30% {
+      margin-left: -100%;
+    }
+
+    50% {
+      margin-left: -100%;
+    }
+
+    60% {
+      margin-left: -200%;
+    }
+
+    80% {
+      margin-left: -200%;
+    }
+
+    90% {
+      margin-left: -300%;
+    }
+
+    100% {
+      margin-left: -300%;
+    }
+  }
+
+  /* ANCHO A LAS COLUMNAS CON IMAGENES EN TABLET */
+  .column {
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* ANCHO DE LAS IMAGENES EN COMPUTADORA */
+  .slider-li {
+    width: 20%;
+  }
+
+  /* DURACION ANIMACION Y ANCHO DEL CONTENEDOR*/
+  .slider {
+    animation-duration: 20s;
+    width: 200%;
+  }
+
+  /* ANIMACION ORDENADOR */
+  @keyframes catalogo {
+    0% {
+      margin-left: 0%;
+    }
+
+    45% {
+      margin-left: 0%;
+    }
+
+    55% {
+      margin-left: -100%;
+    }
+
+    100% {
+      margin-left: -100%;
+    }
+  }
+
+  /* ANCHO A LAS COLUMNAS CON IMAGENES EN COMPUTADORA */
+  .column {
+    width: 25%;
+  }
+}

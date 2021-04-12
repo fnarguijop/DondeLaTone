@@ -1,0 +1,111 @@
+/* MOBILE MENU */
+@media (max-width: 768px) {
+
+  /* OVERLAY MENU */
+  .overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    overflow-x: hidden;
+    transition: 1s;
+  }
+
+  /* CONTENIDO NAVBAR DENTRO DE OVERLAY */
+  .navbar {
+    position: relative;
+    top: 30%;
+    margin-top: 30px;
+  }
+
+  .overlay a {
+    padding: 8px;
+    font-size: 36px;
+    color: #818181;
+    transition: 0.3s;
+  }
+
+  /* OVERLAY LINKS */
+  .overlay a:hover,
+  .overlay a:focus {
+    color: #f1f1f1;
+  }
+
+  /* BOTON ABRIR MENU */
+  .openbtn {
+    position: absolute;
+    right: 0;
+    padding: 20px;
+    transition: color 500ms ease;
+    z-index: 200;
+  }
+
+  .openbtn:hover {
+    color: darkorange;
+  }
+
+  /* BOTON CERRAR MENU */
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+  }
+
+
+  /* ICONO BARRAS */
+  .fa {
+    cursor: pointer;
+  }
+}
+
+/* PARA PANTALLAS DE POCA ALTURA */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px
+  }
+
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+/* PARA TABLETS Y COMPUTADORAS */
+@media (min-width: 768px) {
+
+  /* QUITA BOTON DE ABRIR Y CERRAR MENU DE MOBIL */
+  .openbtn {
+    display: none;
+  }
+
+  .overlay .closebtn {
+    display: none;
+  }
+
+  .navbar {
+    position: absolute;
+    display: flex;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 200;
+  }
+
+  .overlay a {
+    flex: 1;
+    justify-content: space-around;
+    padding: 1em;
+    transition: color 500ms ease;
+    font-size: 1.2em;
+  }
+
+  .overlay a:hover,
+  .overlay a:focus {
+    color: var(--dark-yellow);
+  }
+
+}

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donde La Tone - Asados - Pollo</title>
+    <!-- LINKS CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/individual.css">
+	<!-- ICON IMAGE -->
+	<link rel="icon" href="/images/icono.png" />
+	<!-- FLATICON -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- MENU DE NAVEGACION Y BANNER -->
+    <header>
+        <!-- OVERLAY MENU -->
+        <div id="navbarMobile" class="overlay">
+            <!-- BOTON CERRAR MENU - MOBILE -->
+            <a href="javascript:void(0)" class="closebtn td-none" onclick="closeNav()">&times;</a>
+            <!-- MENU DE NAVEGACION -->
+            <div class="navbar ta-center w-100">
+                <a href="/index.html" class="td-none d-block col-white">Inicio</a>
+                <a href="/menu.html" class="td-none d-block col-white selected_link">Menú</a>
+                <a href="/mas.html" class="td-none d-block col-white">Más</a>
+                <a href="/carrito.html" class="td-none d-block col-white">Carrito</a>
+            </div>
+        </div>
+        <!-- BOTON ABRIR MENU - MOBILE -->
+        <span class=" openbtn fs-2em col-white">
+            <i onclick="openNav()" class="fa fa-bars"></i>
+        </span>
+        <!-- TITULO BANNER  & DESCRIPCION -->
+        <section class="banner-image w-100">
+            <div class="banner-info w-100">
+                <!-- TITULO -->
+                <h1 class="col-white">
+                    Donde la Tone/Asados/Pollo
+                </h1>
+                <!-- DESCRIPCION -->
+                <p class="col-yellow">
+                    La mejor comida al mejor precio
+                </p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section>
+            <!-- COLUMNA GRID -->
+            <div class="grid-column plate" id="pollo">
+                <img src="/images/02-pollo_a_la_plancha.jpg" alt="pollo" title="pollo" class="grid-image w-100 of-cover h-300px" />
+                <h2 class="ta-center fv-small-caps fs-2em pud-10">Pollo</h2>
+                <p class="plate-description ta-justify lh-1-5em fs-1-5em" id="descripcion">
+                    Pollo a la plancha acompañado de tajadas.
+                    <br>
+                </p>
+                <p class="extras lh-1-5em fs-1-5em">
+                    <span id="frij" class="d-none">Frijoles, </span>
+                    <span id="rep" class="d-none">Repollo, </span>
+                    <span id="chi" class="d-none">Chimol, </span>
+                    <span id="enc" class="d-none">Encurtido, </span>
+                    <span id="ader" class="d-none">Aderezos, </span>
+                    <span id="chim" class="d-none">Chimichurri</span>
+                </p>
+                <div class="d-grid grid-price-buy">
+                    <p class="price fs-1-4em" id="precio">L 120.00</p>
+                </div>
+            </div>
+            <form class="form" id="form" onsubmit="return false;">
+                <fieldset class="form__fieldset">
+                    <h2 class="form__title">Especifica tus preferencias</h2>
+                    <div class="form__columns">
+                        <div class="form__column">
+                            <label for="preparacion" class="form__label">Preparacion</label>
+                            <select class="form__select" name="preparacion" id="preparacion" onchange="previewPollo()">
+                                <option value="plancha" class="form__option" selected>Plancha</option>
+                                <option value="empanizado" class="form__option">Empanizado</option>
+                            </select>
+                        </div>
+                        <div class="form__column">
+                            <label for="acompañante" class="form__label">Acompañante</label>
+                            <select class="form__select" name="acompañante" id="acompañante" onchange="loadFunctions()">
+                                <option value="tajadas" class="form__option" selected>Tajadas</option>
+                                <option value="papas" class="form__option">Papas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h3>Acompañantes Opcionales</h3>
+                    <div class="form__columns">
+                        <div class="form__column">
+                            <input value="frijoles fritos" type="checkbox" onclick="addRemoveFrijoles()" id="frijoles">
+                            <label for="frijoles" class="form__label--checkbox">frijoles fritos</label>
+                        </div>
+                        <div class="form__column">
+                            <input value="repollo" type="checkbox" onclick="addRemoveRepollo()" id="repollo">
+                            <label for="repollo" class="form__label--checkbox">repollo</label>
+                        </div>
+                        <div class="form__column">
+                            <input value="chimol" type="checkbox" onclick="addRemoveChimol()" id="chimol">
+                            <label for="chimol" class="form__label--checkbox">chimol</label>
+                        </div>
+                        <div class="form__column">
+                            <input value="encurtido" type="checkbox" onclick="addRemoveEncurtido()" id="encurtido">
+                            <label for="encurtido" class="form__label--checkbox">encurtido</label>
+                        </div>
+                        <div class="form__column">
+                            <input value="aderezos" type="checkbox" onclick="addRemoveAderezos()" id="aderezos">
+                            <label for="aderezos" class="form__label--checkbox">aderezos</label>
+                        </div>
+                        <div class="form__column">
+                            <input value="chimichurri" type="checkbox" onclick="addRemoveChimichurri()" id="chimichurri">
+                            <label for="chimichurri" class="form__label--checkbox">chimichurri</label>
+                        </div>
+                    </div>
+                    <div class="form__message form__message--none" id="message">
+                        <p class="form__description">En la carta se muestran los cambios. Cuando este listo puedes añadirlo al carrito con el icono.</p>
+                        <button class="form__cart">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- TITULO PIE DE PAGINA -->
+        <div class="p-1em bg-yellow bb-col-dark-slate mt-2em">
+            <h2 class="ta-center fs-2em col-black">Accesos rápidos</h2>
+        </div>
+        <!-- CONTENEDOR DE COLUMNAS PIE DE PAGINA -->
+        <div class="bg-dark-slate d-flex fw-wrap w-100">
+            <!-- COLUMNA ASADOS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Asados
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/asados.html#carneDeRes" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Carne de Res
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/asados.html#pollo" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Pollo
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/asados.html#costillaDeCerdo" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Costilla de Cerdo
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <!-- COLUMNA FRITURAS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Frituras
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/frituras.html#tacosFlauta" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Tacos Flauta
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/frituras.html#nachos" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Nachos </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/frituras.html#fingersAlitas" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Fingers o Alitas
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <!-- COLUMNA GOLOSINAS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Golosinas
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/golosinas.html#pupusas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Pupusas
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/golosinas.html#cenas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Cenas
+                        </a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="/js/navbar.js"></script>
+<script src="/js/pollo.js"></script>
+<script src="/js/extras.js"></script>
+
+</html>

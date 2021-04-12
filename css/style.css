@@ -1,0 +1,302 @@
+/* ENLACE A NORMALIZE */
+@import url(normalize.css);
+/* CSS HEADER */
+@import url(navbar.css);
+@import url(banner.css);
+/* CSS FOOTER */
+@import url(footer.css);
+/* CSS PAGINAS */
+@import url(index.css);
+@import url(menu.css);
+@import url(apartados.css);
+/* GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Pangolin&display=swap');
+
+* {
+    box-sizing: border-box;
+    user-select: none;
+    scroll-behavior: smooth;
+    font-family: 'Pangolin', cursive;
+}
+
+/* PALETA DE COLORES A UTILIZAR */
+:root {
+    --dark-slate: #3f5e5a;
+    --dark-slate-hover: #304744;
+    --yellow: #f3d15f;
+    --dark-yellow: #efc12a;
+    --light-brown: hsl(14, 78%, 40%);
+    --bright-red: #a4243b;
+    --dark-red: #4e0a17;
+}
+
+main {
+    margin: 2em 0;
+}
+
+/* CLASES DE COLORES */
+.col-white {
+    color: white;
+}
+
+.col-black {
+    color: black;
+}
+
+.col-dark-slate {
+    color: var(--dark-slate);
+}
+
+.col-yellow {
+    color: var(--yellow);
+}
+
+.col-dark-yellow {
+    color: var(--dark-yellow);
+}
+
+.col-light-brown {
+    color: var(--light-brown);
+}
+
+.col-bright-red {
+    color: var(--bright-red);
+}
+
+.col-dark-red {
+    color: var(--dark-red);
+}
+
+/* CLASES DE FONDOS */
+.bg-white {
+    background-color: white;
+}
+
+.bg-dark-slate {
+    background-color: var(--dark-slate);
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg-bright-red {
+    background-color: var(--bright-red);
+}
+
+.bg-dark-red {
+    background-color: var(--dark-red);
+}
+
+.bg-dark-slate-hover {
+    background-color: var(--dark-slate-hover);
+}
+
+/* CLASES DE ALTURA */
+.h-200px {
+    height: 200px;
+}
+
+.h-300px {
+    height: 300px;
+}
+
+
+/* CLASES DE TEXTO */
+.ta-center {
+    text-align: center;
+}
+
+.ta-justify {
+    text-align: justify;
+}
+
+.lh-1-5em {
+    line-height: 1.5em;
+}
+
+.fv-small-caps {
+    font-variant: small-caps;
+}
+
+.tt-uppercase {
+    text-transform: uppercase;
+}
+
+.fs-1-4em {
+    font-size: 1.4em;
+}
+
+.fs-1-5em {
+    font-size: 1.5em;
+}
+
+.fs-1-8em {
+    font-size: 1.8em;
+}
+
+.fs-2em {
+    font-size: 2em;
+}
+
+.fw-light {
+    font-weight: 200;
+}
+
+/* CLASES FLEX */
+.d-flex {
+    display: flex;
+}
+
+.fw-wrap {
+    flex-wrap: wrap;
+}
+
+/* CLASES GRID */
+.d-grid {
+    display: grid;
+}
+
+.grid-column {
+    margin: 1em 0;
+}
+
+/* CONTENEDOR DE GRID DE 2 COLUMNAS */
+@media (min-width: 768px) {
+    .grid-container-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-container-2 {
+        gap: 3em;
+        margin: 0 3em;
+    }
+
+    .grid-column {
+        margin: 1em 1em;
+    }
+}
+
+
+/* CLASES MARGIN Y PADDING */
+.m-auto {
+    margin: auto;
+}
+
+.mud-1em {
+    margin: 1em 0;
+}
+
+.mt-2em {
+    margin-top: 2em;
+}
+
+.mb-2em {
+    margin-bottom: 2em;
+}
+
+.pud-10 {
+    padding: 10px 0;
+}
+
+.p-0-5em {
+    padding: 0.5em;
+}
+
+.p-1em {
+    padding: 1em;
+}
+
+.pt-1em {
+    padding-top: 1em;
+}
+
+.pb-1em {
+    padding-bottom: 1em;
+}
+
+@media (max-width: 1024px) {
+    .p-1em-mobile-tablet {
+        padding: 1em;
+    }
+}
+
+/* CLASES BORDER */
+.bb-col-yellow {
+    border-bottom: 1px solid var(--yellow);
+}
+
+.bb-col-dark-slate {
+    border-bottom: 1px solid var(--dark-slate);
+}
+
+/* CLASES DE IMAGENES */
+.of-cover {
+    object-fit: cover;
+}
+
+/* CLASES GENERALES */
+.o-hidden {
+    overflow: hidden;
+}
+
+/* CLASES DE LINKS */
+.td-none {
+    text-decoration: none;
+}
+
+.selected_link {
+    color: var(--yellow);
+}
+
+.d-block {
+    display: block;
+}
+
+.ls-none {
+    list-style: none;
+}
+
+.underline-hover:hover {
+    text-decoration: underline;
+}
+
+/* CLASES DE WIDTHS */
+.w-100 {
+    width: 100%;
+}
+
+.w-90 {
+    width: 90%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-25 {
+    width: 25%;
+}
+
+.w-33 {
+    width: 33.3%;
+}
+
+/* DISEÑO AL SCROLL BAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: white;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bright-red);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--dark-red);
+}

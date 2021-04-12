@@ -1,0 +1,59 @@
+/*Formato a la imagen del banner*/
+.banner-image {
+  background: -webkit-linear-gradient(to right, #247b58a9, #092f279a), url(/images/banner.jpg) no-repeat center center;
+  background: linear-gradient(to right, #247b58a9, #092f279a), url(/images/banner.jpg) no-repeat center center;
+  background-size: cover;
+  -o-background-size: cover;
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-attachment: fixed;
+  box-shadow: 0 2px 15px black;
+  height: 25em;
+  position: relative;
+}
+
+/* CONTENEDOR DE LA INFORMACION DEL BANNER */
+.banner-info {
+  position: absolute;
+  bottom: 1em;
+  padding-left: 2em;
+}
+
+/* LOGO DONDE TONE */
+.banner-info h1 {
+  font-size: 2.2em;
+}
+
+/* SLOGAN DONDE TONE */
+.banner-info p {
+  font-size: 1.5em;
+}
+
+/* INFORMACION DEL BANNER EN TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .banner-info h1 {
+    font-size: 3.5em;
+  }
+
+  .banner-info p {
+    font-size: 2em;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* INFORMACION DEL BANNER EN COMPUTADORAS */
+
+  .banner-info h1 {
+    font-size: 4em;
+  }
+
+  .banner-info p {
+    font-size: 2.5em;
+  }
+
+  /* IMAGEN DEL BANNER EN COMPUTADORAS */
+  .banner-image {
+    height: 35em;
+  }
+}
