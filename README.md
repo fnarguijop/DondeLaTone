@@ -3,4 +3,4 @@ Pagina de venta de comida, desarrollada como proyecto de practica personal para 
 
 ;)
 
-https://endondelatone.web.app/
+https://endondelatone.web.app
