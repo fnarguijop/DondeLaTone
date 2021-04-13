@@ -1,0 +1,46 @@
+footer {
+  box-shadow: 0 -2px 15px rgba(0, 0, 0, .7);
+}
+
+/*CONTENEDOR DE LINKS FOOTER*/
+.footer-column,
+.footer-section,
+.footer-li,
+.link-container {
+  width: 100%;
+}
+
+/* PADDING ENLACES FOOTER */
+.p-footer-links {
+  padding: .2em 1em;
+}
+
+/*Foramto a cada a dentro del li de la ul*/
+.footer-li-a {
+  padding: 0.2em 0 .2em 1em;
+  transition: background 500ms ease-out;
+}
+
+
+footer nav a:hover,
+.footer-li-a:hover {
+  background: var(--dark-slate);
+}
+
+/* TABLET FOOTER */
+@media (min-width: 768px) and (max-width:1024px) {
+
+  .link-container,
+  .footer-li {
+    width: 50%;
+  }
+}
+
+/* COMPUTER FOOTER */
+@media (min-width: 1024px) {
+
+  .footer-column,
+  .footer-section {
+    width: 33.3%;
+  }
+}

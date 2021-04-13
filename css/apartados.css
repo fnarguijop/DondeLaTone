@@ -1,0 +1,75 @@
+/* GRID CONTENEDOR DEL PRECIO Y BOTON DE COMPRAR */
+.grid-price-buy {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* BOTON COMPRAR */
+.buy-btn {
+  border-radius: 10px;
+  grid-column: 3/4;
+  transition: background 500ms;
+}
+
+.buy-btn:hover {
+  background: var(--dark-slate);
+}
+
+/* PRECIO Y BOTON DE COMPRAR DE LOS PLATOS */
+.price,
+.buy-btn {
+  padding: .5em 0;
+}
+
+.price {
+  margin-left: .5em;
+  color: green;
+}
+
+.buy-btn {
+  margin-right: .5em;
+}
+
+/* DESCRIPCION DEL PLATO EN MOBILES */
+.plate-description {
+  padding: 0.5em;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .grid-image {
+    padding: 1em;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  /* CONTENEDOR DE LA INFORMACION DEL PLATO */
+  .plate {
+    box-shadow: 0 0 10px black;
+    border-radius: 10px;
+  }
+
+  /* IMAGEN DENTRO DEL GRID */
+  .grid-image {
+    border-radius: 10px 10px 0 0;
+  }
+
+  /* PRECIO Y BOTON DE COMPRAR EN TABLET Y COMPUTADORA*/
+  .price,
+  .buy-btn {
+    margin-bottom: 1em;
+  }
+
+  .price {
+    margin-left: 1em;
+  }
+
+  .buy-btn {
+    margin-right: 1em;
+  }
+
+  /* DESCRIPCION DEL PLATO EN TABLET Y COMPUTADORA*/
+  .plate-description {
+    padding: 1em;
+  }
+
+}

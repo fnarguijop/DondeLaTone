@@ -1,0 +1,87 @@
+.extras {
+    margin: .2rem 1.5rem;
+    text-align: justify;
+}
+
+.form__fieldset {
+    margin: 1rem;
+    padding: 1rem;
+}
+.form__title {
+    font-size: 2em;
+    font-variant: small-caps;
+    font-weight: bold;
+    margin: 1rem 0 2rem;
+}
+.form__columns {
+    display: flex;
+    flex-wrap: wrap;
+}
+.form__column {
+    padding: 0.1rem;
+    width: 50%;
+}
+.form__label, .form__select, .form__description, .form__label--checkbox {
+    font-size: 1.2em;
+}
+.form__label {
+    font-weight: bold;
+}
+.form__select {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 0.2rem;
+    outline: none;
+}
+h3 {
+    margin-top: 1rem;
+}
+
+.form__message {
+    margin: 2rem 0 1rem;
+    display: flex;
+}
+.form__description {
+    flex: 1;
+    text-align: justify;
+}
+.form__cart {
+    padding: 0 1rem;
+    margin-left: 1rem;
+    font-size: 1.5em;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color:#008000;
+    color: white;
+    transition: background-color 500ms linear;
+}
+.form__cart:hover {
+    background-color: #025502;
+}
+.form__cart:active {
+    box-shadow: 0 0 10px #000;
+}
+
+.form__message--none, .d-none {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .plate {
+        width: 40%;
+    }
+    section {
+        display: flex;
+    }
+    .form {
+        width: 60%;
+    }
+    .form__fieldset {
+        box-shadow: 0 0 10px black;
+        border-radius: 10px;
+        border: none;
+    }
+}

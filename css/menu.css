@@ -1,0 +1,34 @@
+/* TITULO DE LOS APARTADOS DE COMIDA */
+.food-section-title {
+  padding-bottom: 0.5em;
+  width: 80%;
+  border-bottom: 2px solid var(--bright-red);
+}
+
+/* APARTADOS DE COMIDA */
+.food-section {
+  border-top: 0.5em solid var(--yellow);
+  margin: 1em auto;
+  border-radius: 1em;
+  width: 90%;
+  transition: all 500ms ease-out;
+}
+
+.food-section:hover {
+  transform: translateX(0.6em) translateY(0.6em);
+  box-shadow: -0.6em -0.6em 0 #282828;
+}
+
+/* BOTONES DE LAS SECCIONES DE COMIDA EN TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .food-section {
+    width: 45%;
+  }
+}
+
+/* BOTONES DE LAS SECCIONES DE COMIDA EN COMPUTADORA */
+@media (min-width: 1024px) {
+  .food-section {
+    width: 30%;
+  }
+}

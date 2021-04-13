@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- METADATOS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no" />
+  <meta name="author" content="JorgeA" />
+  <meta name="copyright" content="JorgeA">
+  <meta name="robots" content="index,follow" />
+  <meta name="description"
+    content="Ven y disfruta de una variedad de platillos que se adaptan a tus gustos y presupuesto." />
+  <meta name="keywords" content="comida,alimentos,deliciosa,donde,tone" />
+  <meta http-equiv="refresh" content="400" />
+  <title>Donde La Tone - Frituras</title>
+  <!-- LINKS CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <!-- ICON IMAGE -->
+  <link rel="icon" href="images/icono.png" />
+  <!-- FLATICON -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!-- MENU DE NAVEGACION Y BANNER -->
+  <header>
+    <!-- OVERLAY MENU -->
+    <div id="navbarMobile" class="overlay">
+      <!-- BOTON CERRAR MENU - MOBILE -->
+      <a href="javascript:void(0)" class="closebtn td-none" onclick="closeNav()">&times;</a>
+      <!-- MENU DE NAVEGACION -->
+      <div class="navbar ta-center w-100">
+        <a href="/index.html" class="td-none d-block col-white">Inicio</a>
+        <a href="/menu.html" class="td-none d-block col-white selected_link">Menú</a>
+        <a href="/mas.html" class="td-none d-block col-white">Más</a>
+        <a href="/carrito.html" class="td-none d-block col-white">Carrito</a>
+      </div>
+    </div>
+    <!-- BOTON ABRIR MENU - MOBILE -->
+    <span class=" openbtn fs-2em col-white">
+      <i onclick="openNav()" class="fa fa-bars"></i>
+    </span>
+    <!-- TITULO BANNER  & DESCRIPCION -->
+    <section class="banner-image w-100">
+      <div class="banner-info w-100">
+        <!-- TITULO -->
+        <h1 class="col-white">
+          <a href="/index.html">Donde la Tone</a>/<a href="/menu.html">Menú</a>/<a href="/frituras.html">Frituras</a>
+        </h1>
+        <!-- DESCRIPCION -->
+        <p class="col-yellow">
+          La mejor comida al mejor precio
+        </p>
+      </div>
+    </section>
+  </header>
+
+  <!-- CONTENEDOR PLATOS FRITURAS -->
+  <main>
+    <!-- CONTENEDOR DE PLATILLOS -->
+    <section class="grid-container-2 d-grid">
+      <!-- COLUMNA GRID -->
+      <div class="grid-column plate" id="tacosFlauta">
+        <img src="/images/04-tacos_flauta.jpg" alt="tacos flauta" title="tacos flauta"
+          class="grid-image w-100 of-cover h-300px" />
+        <h2 class="ta-center fv-small-caps fs-2em pud-10">Tacos Flauta</h2>
+        <p class="plate-description ta-justify lh-1-5em fs-1-5em h-200px">
+          2 deliciosos tacos acompañados de una ensalada de repollo, chimol,
+          una rica salsa, queso y aguacate.
+        </p>
+        <div class="d-grid grid-price-buy">
+          <p class="price fs-1-4em">L 60.00</p>
+          <a href="frituras/tacos.html#tacosFlauta" class="buy-btn ta-center bg-dark-slate-hover fs-1-4em td-none col-white">Comprar</a>
+        </div>
+      </div>
+      <!-- COLUMNA GRID -->
+      <div class="grid-column plate" id="nachos">
+        <img src="/images/05-nachos.jpg" alt="nachos" title="nachos" class="grid-image w-100 of-cover h-300px" />
+        <h2 class="ta-center fv-small-caps fs-2em pud-10">Nachos</h2>
+        <p class="plate-description ta-justify lh-1-5em fs-1-5em h-200px">
+          Una buena cantidad de tortillas tostadas bañadas con queso
+          derretido, chimol, rico pollo desmenusado, aderezo y chile.
+        </p>
+        <div class="d-grid grid-price-buy">
+          <p class="price fs-1-4em">L 80.00</p>
+          <a href="frituras/nachos.html#nachos" class="buy-btn ta-center bg-dark-slate-hover fs-1-4em td-none col-white">Comprar</a>
+        </div>
+      </div>
+      <!-- COLUMNA GRID -->
+      <div class="grid-column plate" id="fingersAlitas">
+        <img src="/images/06-fingers_wingers.jpg" alt="fingers o alitas" title="fingers o alitas"
+          class="grid-image w-100 of-cover h-300px" />
+        <h2 class="ta-center fv-small-caps fs-2em pud-10">Fingers o Alitas</h2>
+        <p class="plate-description ta-justify lh-1-5em fs-1-5em h-200px">
+          Fingers o alitas que pueden ser bañadas con salsa buffalo o bbq, ambas acompañadas de una buena porción de
+          papas y aderezos.
+        </p>
+        <div class="d-grid grid-price-buy">
+          <p class="price fs-1-4em">L 90.00</p>
+          <a href="frituras/fingers.html#fingersAlitas" class="buy-btn ta-center bg-dark-slate-hover fs-1-4em td-none col-white">Comprar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- PIE DE PAGINA -->
+  <footer>
+    <!-- TITULO PIE DE PAGINA -->
+    <div class="p-1em bg-yellow bb-col-dark-slate mt-2em">
+      <h2 class="ta-center fs-2em col-black">Accesos rápidos</h2>
+    </div>
+    <!-- CONTENEDOR DE COLUMNAS PIE DE PAGINA -->
+    <div class="bg-dark-slate d-flex fw-wrap w-100">
+      <!-- COLUMNA ASADOS -->
+      <div class="footer-section p-1em bg-dark-slate-hover">
+        <!-- TITULO COLUMNA -->
+        <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+          Asados
+        </h1>
+        <!-- LINKS NAVEGACION -->
+        <nav class="ls-none d-flex fw-wrap pud-10">
+          <li class="footer-li">
+            <a href="asados.html#carneDeRes" class="footer-li-a td-none col-white d-block fs-1-4em ">
+              Carne de Res
+            </a>
+          </li>
+          <li class="footer-li">
+            <a href="asados.html#pollo" class="footer-li-a td-none col-white d-block fs-1-4em ">
+              Pollo
+            </a>
+          </li>
+          <li class="footer-li">
+            <a href="asados.html#costillaDeCerdo" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+              Costilla de Cerdo
+            </a>
+          </li>
+        </nav>
+      </div>
+      <!-- COLUMNA FRITURAS -->
+      <div class="footer-section p-1em bg-dark-slate-hover">
+        <!-- TITULO COLUMNA -->
+        <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+          Frituras
+        </h1>
+        <!-- LINKS NAVEGACION -->
+        <nav class="ls-none d-flex fw-wrap pud-10">
+          <li class="footer-li">
+            <a href="frituras.html#tacosFlauta" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+              Tacos Flauta
+            </a>
+          </li>
+          <li class="footer-li">
+            <a href="frituras.html#nachos" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+              Nachos </a>
+          </li>
+          <li class="footer-li">
+            <a href="frituras.html#fingersAlitas" class="footer-li-a td-none col-white d-block fs-1-4em ">
+              Fingers o Alitas
+            </a>
+          </li>
+        </nav>
+      </div>
+      <!-- COLUMNA GOLOSINAS -->
+      <div class="footer-section p-1em bg-dark-slate-hover">
+        <!-- TITULO COLUMNA -->
+        <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+          Golosinas
+        </h1>
+        <!-- LINKS NAVEGACION -->
+        <nav class="ls-none d-flex fw-wrap pud-10">
+          <li class="footer-li">
+            <a href="golosinas.html#pupusas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+              Pupusas
+            </a>
+          </li>
+          <li class="footer-li">
+            <a href="golosinas.html#cenas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+              Cenas
+            </a>
+          </li>
+        </nav>
+      </div>
+    </div>
+  </footer>
+</body>
+
+<script src="/js/navbar.js"></script>
+
+</html>

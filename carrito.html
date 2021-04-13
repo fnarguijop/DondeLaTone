@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donde La Tone - Carrito</title>
+    <!-- LINKS CSS -->
+	<link rel="stylesheet" href="/css/style.css">
+	<!-- ICON IMAGE -->
+	<link rel="icon" href="images/icono.png" />
+	<!-- FLATICON -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <!-- MENU DE NAVEGACION Y BANNER -->
+	<header>
+		<!-- OVERLAY MENU -->
+		<div id="navbarMobile" class="overlay">
+			<!-- BOTON CERRAR MENU - MOBILE -->
+			<a href="javascript:void(0)" class="closebtn td-none" onclick="closeNav()">&times;</a>
+			<!-- MENU DE NAVEGACION -->
+			<div class="navbar ta-center w-100">
+				<a href="/index.html" class="td-none d-block col-white">Inicio</a>
+				<a href="/menu.html" class="td-none d-block col-white">Menú</a>
+				<a href="/mas.html" class="td-none d-block col-white">Más</a>
+                <a href="/carrito.html" class="td-none d-block col-white selected_link">Carrito</a>
+			</div>
+		</div>
+		<!-- BOTON ABRIR MENU - MOBILE -->
+		<span class=" openbtn fs-2em col-white">
+			<i onclick="openNav()" class="fa fa-bars"></i>
+		</span>
+		<!-- TITULO BANNER  & DESCRIPCION -->
+		<section class="banner-image w-100">
+			<div class="banner-info w-100">
+				<!-- TITULO -->
+				<h1 class="col-white">
+					<a href="/index.html">Donde la Tone</a>/<a href="/carrito.html">Carrito</a>
+				</h1>
+				<!-- DESCRIPCION -->
+				<p class="col-yellow">
+					La mejor comida al mejor precio
+				</p>
+			</div>
+		</section>
+	</header>
+    <main>
+        <h1 class="ta-center col-light-brown">Pagina en desarrollo</h1>
+        <section class="shopped">
+			<div class="shopped__plate">
+				<div class="shopped__plate-info">
+					<h2 class="shopped__name">Costilla</h2>
+					<p class="shopped__description">
+						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque voluptates reprehenderit aut inventore, similique cupiditate libero assumenda hic minus sint molestias quibusdam laboriosam sapiente quis.
+					</p>
+					<p class="shopped__price">120</p>
+				</div>
+				<div class="shopped__plate-config">
+					<input type="number" min="0" max="10" class="shopped__input">
+					<button class="shopped__button">
+						<i class="">X</i>
+					</button>
+				</div>
+			</div>
+		</section>
+    </main>
+    <!-- PIE DE PAGINA -->
+	<footer>
+		<!-- CONTENEDOR COLUMNAS FOOTER -->
+		<div class="d-flex fw-wrap bg-dark-slate-hover">
+			<!-- COLUMNA NUESTRO MENU -->
+			<div class="footer-column col-white p-1em">
+				<!-- TITULO COLUMNA -->
+				<h2 class="bb-col-yellow ta-center fv-small-caps fs-2em">
+					Nuestro Menú
+				</h2>
+				<!-- LINKS NAVEGACION FOOTER -->
+				<nav class="ls-none d-flex fw-wrap">
+					<li class="link-container">
+						<a href="menu.html#apartadosmenu"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Apartados Menú
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="asados.html"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Asados
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="frituras.html"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Frituras
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="golosinas.html"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Golosinas
+						</a>
+					</li>
+				</nav>
+			</div>
+			<!-- COLUMNA NUESTRAS REDES -->
+			<div class="footer-column col-white p-1em">
+				<!-- TITULO COLUMNA -->
+				<h2 class="bb-col-yellow ta-center fv-small-caps fs-2em">
+					Nuestras Redes
+				</h2>
+				<!-- LINKS NAVEGACION FOOTER -->
+				<nav class="ls-none d-flex fw-wrap">
+					<li class="link-container">
+						<a href="https://www.instagram.com/dondelatone/" target="_blank"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							DondeLaTone
+							<i class="fa fa-instagram"></i>
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="https://mail.google.com/mail/u/0/#inbox?compose=SxfkdrHvwLqMhTGGtgjHdBTpDSKKfWVWWJPwHRtTbwGMcrGvDvhNwzrksLrNRlvWsMvkcBqpRFDVRtxjBXqncHDlftPXggrTmMDxtRQvnVZwNgmDhbq"
+							target="_blank"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							DondeLaTone
+							<i class="fa fa-envelope"></i>
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="https://www.facebook.com/DondeLaTone" target="_blank"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							DondeLaTone
+							<i class="fa fa-facebook"></i>
+						</a>
+					</li>
+				</nav>
+			</div>
+			<!-- COLUMNA MAS DE NOSOTROS -->
+			<div class="footer-column col-white p-1em">
+				<!-- TITULO COLUMNA -->
+				<h2 class="bb-col-yellow ta-center fv-small-caps fs-2em">
+					Más de Nosotros
+				</h2>
+				<!-- LINKS NAVEGACION FOOTER -->
+				<nav class="ls-none d-flex fw-wrap">
+					<li class="link-container">
+						<a href="mas.html#ubicacion"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Nuestra Ubicación
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="index.html#masvendidos"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Platos mas vendidos
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="mas.html#nosotros"x`
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Más Información
+						</a>
+					</li>
+					<li class="link-container">
+						<a href="mas.html#horario"
+							class="p-footer-links td-none d-block col-white fs-1-5em">
+							Horario de Atención
+						</a>
+					</li>
+				</nav>
+			</div>
+		</div>
+	</footer>
+</body>
+
+<script src="/js/navbar.js"></script>
+
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donde La Tone - Frituras - Fingers</title>
+    <!-- LINKS CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/individual.css">
+	<!-- ICON IMAGE -->
+	<link rel="icon" href="/images/icono.png" />
+	<!-- FLATICON -->
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!-- MENU DE NAVEGACION Y BANNER -->
+    <header>
+        <!-- OVERLAY MENU -->
+        <div id="navbarMobile" class="overlay">
+            <!-- BOTON CERRAR MENU - MOBILE -->
+            <a href="javascript:void(0)" class="closebtn td-none" onclick="closeNav()">&times;</a>
+            <!-- MENU DE NAVEGACION -->
+            <div class="navbar ta-center w-100">
+                <a href="/index.html" class="td-none d-block col-white">Inicio</a>
+                <a href="/menu.html" class="td-none d-block col-white selected_link">Menú</a>
+                <a href="/mas.html" class="td-none d-block col-white">Más</a>
+                <a href="/carrito.html" class="td-none d-block col-white">Carrito</a>
+            </div>
+        </div>
+        <!-- BOTON ABRIR MENU - MOBILE -->
+        <span class=" openbtn fs-2em col-white">
+            <i onclick="openNav()" class="fa fa-bars"></i>
+        </span>
+        <!-- TITULO BANNER  & DESCRIPCION -->
+        <section class="banner-image w-100">
+            <div class="banner-info w-100">
+                <!-- TITULO -->
+                <h1 class="col-white">
+                    <a href="/index.html">..</a>/<a href="/menu.html">Menú</a>/<a href="/frituras.html">Frituras</a>/<a href="/frituras/fingers.html">Fingers</a>
+                </h1>
+                <!-- DESCRIPCION -->
+                <p class="col-yellow">
+                    La mejor comida al mejor precio
+                </p>
+            </div>
+        </section>
+    </header>
+    <main>
+        <section>
+            <!-- COLUMNA GRID -->
+            <div class="grid-column plate" id="fingersAlitas">
+                <img src="/images/06-fingers_wingers.jpg" alt="fingers o alitas" title="fingers o alitas" class="grid-image w-100 of-cover h-300px" />
+                <h2 class="ta-center fv-small-caps fs-2em pud-10">Fingers o Alitas</h2>
+                <p class="plate-description ta-justify lh-1-5em fs-1-5em" id="descripcion">
+                    Ocho fingers bañadas con salsa buffalo y acompañada de Papas
+                    <br>
+                </p>
+                <p class="extras lh-1-5em fs-1-5em">
+                    <span id="ader" class="d-none">Aderezos.</span>
+                </p>
+                <div class="d-grid grid-price-buy">
+                    <p class="price fs-1-4em" id="precio">L 100.00</p>
+                </div>
+            </div>
+            <form class="form" id="form" onsubmit="return false;">
+                <fieldset class="form__fieldset">
+                    <h2 class="form__title">Especifica tus preferencias</h2>
+                    <div class="form__columns">
+                        <div class="form__column">
+                            <label for="tamaño" class="form__label">Tamaño</label>
+                            <select class="form__select" name="tamaño" id="tamaño" onchange="showChanges()">
+                                <option value="Ocho" class="form__option" selected>Ocho</option>
+                                <option value="Doce" class="form__option">Doce</option>
+                            </select>
+                        </div>
+                        <div class="form__column">
+                            <label for="preparacion" class="form__label">Preparación</label>
+                            <select class="form__select" name="preparacion" id="preparacion" onchange="showChanges()">
+                                <option value="buffalo" class="form__option" selected>Buffalo</option>
+                                <option value="bbq" class="form__option">BBQ</option>
+                            </select>
+                        </div>
+                        <div class="form__column">
+                            <label for="tipo" class="form__label">Tipo</label>
+                            <select class="form__select" name="tipo" id="tipo" onchange="showChanges()">
+                                <option value="fingers" class="form__option" selected>Fingers</option>
+                                <option value="alitas" class="form__option">Alitas</option>
+                            </select>
+                        </div>
+                        <div class="form__column">
+                            <label for="acompañante" class="form__label">Acompañante</label>
+                            <select class="form__select" name="acompañante" id="acompañante" onchange="showChanges()">
+                                <option value="papas" class="form__option" selected>Papas</option>
+                                <option value="tajadas" class="form__option">Tajadas</option>
+                            </select>
+                        </div>
+                    </div>
+                    <h3>Acompañantes Opcionales</h3>
+                    <div class="form__columns">
+                        <div class="form__column">
+                            <input value="ader" type="checkbox" onclick="addRemoveExtra(this)" id="aderezos">
+                            <label for="aderezos" class="form__label--checkbox">aderezos</label>
+                        </div>
+                    </div>
+                    <div class="form__message form__message--none" id="message">
+                        <p class="form__description">En la carta se muestran los cambios. Cuando este listo puedes añadirlo al carrito con el icono.</p>
+                        <button class="form__cart">
+                            <i class="fa fa-cart-plus"></i>
+                        </button>
+                    </div>
+                </fieldset>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <!-- TITULO PIE DE PAGINA -->
+        <div class="p-1em bg-yellow bb-col-dark-slate mt-2em">
+            <h2 class="ta-center fs-2em col-black">Accesos rápidos</h2>
+        </div>
+        <!-- CONTENEDOR DE COLUMNAS PIE DE PAGINA -->
+        <div class="bg-dark-slate d-flex fw-wrap w-100">
+            <!-- COLUMNA ASADOS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Asados
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/asados.html#carneDeRes" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Carne de Res
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/asados.html#pollo" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Pollo
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/asados.html#costillaDeCerdo" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Costilla de Cerdo
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <!-- COLUMNA FRITURAS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Frituras
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/frituras.html#tacosFlauta" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Tacos Flauta
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/frituras.html#nachos" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Nachos </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/frituras.html#fingersAlitas" class="footer-li-a td-none col-white d-block fs-1-4em ">
+                            Fingers o Alitas
+                        </a>
+                    </li>
+                </nav>
+            </div>
+            <!-- COLUMNA GOLOSINAS -->
+            <div class="footer-section p-1em bg-dark-slate-hover">
+                <!-- TITULO COLUMNA -->
+                <h1 class="ta-center bb-col-yellow col-white fs-2em fv-small-caps">
+                    Golosinas
+                </h1>
+                <!-- LINKS NAVEGACION -->
+                <nav class="ls-none d-flex fw-wrap pud-10">
+                    <li class="footer-li">
+                        <a href="/golosinas.html#pupusas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Pupusas
+                        </a>
+                    </li>
+                    <li class="footer-li">
+                        <a href="/golosinas.html#cenas" class="footer-li-a td-none col-white d-block fs-1-4em  ">
+                            Cenas
+                        </a>
+                    </li>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script src="/js/navbar.js"></script>
+<script src="/js/extras.js"></script>
+<script src="/js/fingers.js"></script>
+
+</html>
