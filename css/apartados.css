@@ -29,7 +29,12 @@
   margin-right: .5em;
 }
 
-/* DESCRIPCION DEL PLATO EN MOBILES */
+.plate-name, .plate-description, .price, .buy-btn {
+  position: relative;
+  transition: all .5s ease-out;
+}
+
+/* DESCRIPCION DEL PLATO */
 .plate-description {
   padding: 0.5em;
 }
@@ -39,6 +44,7 @@
     padding: 1em;
   }
 }
+
 
 @media (min-width: 1024px) {
 

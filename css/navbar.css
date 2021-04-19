@@ -39,12 +39,14 @@
     position: absolute;
     right: 0;
     padding: 20px;
-    transition: color 500ms ease;
     z-index: 200;
   }
 
-  .openbtn:hover {
+  .openbtn > i:hover {
     color: darkorange;
+  }
+  .openbtn > i {
+    transition: color 500ms ease;
   }
 
   /* BOTON CERRAR MENU */

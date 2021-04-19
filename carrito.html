@@ -7,6 +7,7 @@
     <title>Donde La Tone - Carrito</title>
     <!-- LINKS CSS -->
 	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/carrito.css">
 	<!-- ICON IMAGE -->
 	<link rel="icon" href="images/icono.png" />
 	<!-- FLATICON -->
@@ -47,23 +48,37 @@
 		</section>
 	</header>
     <main>
-        <h1 class="ta-center col-light-brown">Pagina en desarrollo</h1>
-        <section class="shopped">
+		<h1 class="ta-center col-dark-red shopped__title">Carrito</h1>
+		<section class="shopped">
 			<div class="shopped__plate">
-				<div class="shopped__plate-info">
-					<h2 class="shopped__name">Costilla</h2>
-					<p class="shopped__description">
+				<div class="shopped__plate--image-container">
+					<img src="/images/01-carne_de_res.jpg" alt="" class="shopped__plate--image">
+					<h2 class="shopped__name">Carne de res</h2>
+				</div>
+				<div class="shopped__plate--info">
+					<h3 class="shopped__description--title">Descripción</h3>
+					<p class="shopped__description" title="Descripcion">
 						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque voluptates reprehenderit aut inventore, similique cupiditate libero assumenda hic minus sint molestias quibusdam laboriosam sapiente quis.
 					</p>
-					<p class="shopped__price">120</p>
+					<h3 class="shopped__extras--title">Acompañantes opcionales</h3>
+					<p class="shopped__extras" title="extras">Frijoles, Repollo, Chimol, Encurtido, Aderezos, Chimichurri</p>
 				</div>
-				<div class="shopped__plate-config">
-					<input type="number" min="0" max="10" class="shopped__input">
-					<button class="shopped__button">
-						<i class="">X</i>
-					</button>
+				<div class="shopped__plate--price-config">
+					<div class="shopped__plate--price-container">
+						<p class="shopped__price">120</p>
+					</div>
+					<div class="shopped__plate-config">
+						<input type="number" min="1" max="20" class="shopped__input" title="Cantidad" value="1">
+						<button class="shopped__button shopped__button--delete" title="Eliminar">
+							<i class="fa fa-trash"></i>
+						</button>
+					</div>
 				</div>
 			</div>
+		</section>
+		<section class="total">
+			<h2 class="total__name">Total:</h2>
+			<p class="total__number">00</p>
 		</section>
     </main>
     <!-- PIE DE PAGINA -->
