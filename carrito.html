@@ -14,7 +14,7 @@
 	<link rel="stylesheet"
 		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
+<body onload="showPlatillos()">
     <!-- MENU DE NAVEGACION Y BANNER -->
 	<header>
 		<!-- OVERLAY MENU -->
@@ -49,36 +49,22 @@
 	</header>
     <main>
 		<h1 class="ta-center col-dark-red shopped__title">Carrito</h1>
-		<section class="shopped">
-			<div class="shopped__plate">
-				<div class="shopped__plate--image-container">
-					<img src="/images/01-carne_de_res.jpg" alt="" class="shopped__plate--image">
-					<h2 class="shopped__name">Carne de res</h2>
-				</div>
-				<div class="shopped__plate--info">
-					<h3 class="shopped__description--title">Descripción</h3>
-					<p class="shopped__description" title="Descripcion">
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Neque voluptates reprehenderit aut inventore, similique cupiditate libero assumenda hic minus sint molestias quibusdam laboriosam sapiente quis.
-					</p>
-					<h3 class="shopped__extras--title">Acompañantes opcionales</h3>
-					<p class="shopped__extras" title="extras">Frijoles, Repollo, Chimol, Encurtido, Aderezos, Chimichurri</p>
-				</div>
-				<div class="shopped__plate--price-config">
-					<div class="shopped__plate--price-container">
-						<p class="shopped__price">120</p>
-					</div>
-					<div class="shopped__plate-config">
-						<input type="number" min="1" max="20" class="shopped__input" title="Cantidad" value="1">
-						<button class="shopped__button shopped__button--delete" title="Eliminar">
-							<i class="fa fa-trash"></i>
-						</button>
-					</div>
-				</div>
+		<div class="carrito-options">
+			<button onclick='limpiarCarrito();'>Limpiar carrito</button>
+			<div class="select">
+				<select name="carrito-filter" id="" disabled>
+					<option value="todos">todos</option>
+					<option value="mas caros">mas caros</option>
+					<option value="mas baratos">mas baratos</option>
+				</select>
 			</div>
+		</div>
+		<p class="initial-message" id="initial-message">Los platos que añada al carrito apareceran aquí.</p>
+		<section class="shopped">
 		</section>
 		<section class="total">
 			<h2 class="total__name">Total:</h2>
-			<p class="total__number">00</p>
+			<p class="total__number">0</p>
 		</section>
     </main>
     <!-- PIE DE PAGINA -->
@@ -190,5 +176,7 @@
 </body>
 
 <script src="/js/navbar.js"></script>
+<script src="/js/PlatillosComprados.js"></script>
+<script src="/js/createPlates.js"></script>
 
 </html>

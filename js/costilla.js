@@ -8,5 +8,8 @@ function showChanges() {
     if(acompañante.value == 'papas') precio = 140;
     else precio = 120;
     document.getElementById('precio').innerHTML = `L ${precio}.00`;
-    document.getElementById('message').style.display = 'flex';
+    let extra = document.querySelector('extras');
+    extra.addEventListener('click',(e) => {
+        e.target;
+    })
 }

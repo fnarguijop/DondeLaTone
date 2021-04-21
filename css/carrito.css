@@ -4,6 +4,67 @@
     text-transform: uppercase;
 }
 
+/* contenedor de las opciones del carrito */
+.carrito-options {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4em;
+}
+
+/* El boton dentro del contenedor y el div que contiene el select para filtrar */
+.carrito-options>button,
+.select {
+    margin: 0 1rem;
+}
+
+/* El boton y el select dentro del div */
+.carrito-options>button,
+.select>select {
+    padding: 0.5rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background-color: rgba(245, 245, 245, 0.7);
+}
+
+/* El boton y el select en hover */
+.carrito-options>button:hover,
+.select>select:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* El boton y el select en active */
+.carrito-options>button:active,
+.select>select:active {
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Al contenedor del select */
+.select {
+    position: relative;
+}
+
+/* Al contenedor del select con el pseudo elemento ::after*/
+.select::after {
+    content: "\25BC";
+    background: #a4243b;
+    color: white;
+    padding: 0.6rem;
+    position: absolute;
+    right: 0;
+    border-radius: 0 10px 10px 0;
+    pointer-events: none;
+}
+
+/* Parrafo con un mensaje inicial */
+main>p.initial-message {
+    text-align: center;
+    margin: 1rem 0;
+    font-size: 1.4em;
+}
+
+
 /* Contenedor de todos los platillos añadidos al carrito */
 .shopped {
     padding: 1rem;
@@ -12,6 +73,7 @@
 /* Cada platillo del carrito */
 .shopped__plate {
     margin-top: 2rem;
+    transition: all 1s linear;
 }
 
 /* Cada contenedor de la imagen de los platillos */
@@ -23,18 +85,21 @@
     justify-content: center;
     overflow: hidden;
 }
+
 /* Cada imagen de platillo */
 .shopped__plate--image {
     width: 100%;
     border-radius: 2rem;
     transition: filter 500ms;
-    max-height: 60vh;
+    height: 50vh;
     object-fit: cover;
 }
+
 .shopped__plate--image:hover {
     filter: brightness(.5);
 }
-.shopped__plate--image:hover + .shopped__name {
+
+.shopped__plate--image:hover+.shopped__name {
     transform: translateX(0);
 }
 
@@ -42,6 +107,7 @@
 .shopped__plate--info {
     text-align: center;
 }
+
 /* Nombre de los platillos */
 .shopped__name {
     font-variant: small-caps;
@@ -49,24 +115,38 @@
     position: absolute;
     color: white;
     font-size: 8vmin;
-    transform: translateX(600px);
+    transform: translateX(700px);
     transition: transform .9s linear;
 }
 
 /* Titulo de la descripcion y los extras de los platillos */
-.shopped__description--title, .shopped__extras--title {
+.shopped__description--title,
+.shopped__extras--title {
     font-size: 1.8em;
     padding: .7rem 0;
 }
 
 /* Descripcion, extras y precios de los platillos */
-.shopped__description, .shopped__extras, .shopped__plate--price-config {
+.shopped__description,
+.shopped__plate--price-config {
     text-align: justify;
     font-size: 1.4em;
 }
-/* Extras de los platillos */
-.shopped__extras::after {
-    content: '.';
+.shopped__extras {
+    text-align: left;
+}
+
+.shopped__extras > span {
+    padding: 0 1rem;
+    margin: .5rem .5rem .5rem 0;
+    min-width: 6rem;
+    font-size: 1.4em;
+    background-color: rgb(246, 51, 51);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.4);
+    color: white;
+    display: inline-block;
 }
 
 /* Contenedor de los contenedores del precio y los botones de configuracion de los platillos */
@@ -76,41 +156,52 @@
     justify-content: space-between;
     padding: 1rem 0;
 }
+
 /* Contenedor del precio de los platillos */
 .shopped__plate--price-container {
     color: green;
 }
 
 /* El precio de los platillos */
-.shopped__price::before, .total__number::before {
+.shopped__price::before,
+.total__number::before {
     content: 'L ';
 }
-.shopped__price::after, .total__number::after {
+
+.shopped__price::after,
+.total__number::after {
     content: '.00';
 }
 
 /* El input que permite ingresar la cantidad de platillos */
 .shopped__input {
-    max-width: 5rem;
+    max-width: 7rem;
     margin: 0 .7rem;
     border-radius: 15px;
+    display: inline;
 }
-.shopped__input:focus, .shopped__button:active {
+
+.shopped__button:hover {
+    box-shadow: 0 0 5px black;
+}
+
+.shopped__button:active {
     box-shadow: inset 0 0 5px black;
 }
 
 /* Boton para eliminar platillos y input para seleccionar la cantidad */
-.shopped__button, .shopped__input {
-    border: none;
+.shopped__button,
+.shopped__input {
     outline: none;
-    box-shadow: 0 0 5px black;
     padding: 10px;
-    cursor: pointer;
 }
+
 .shopped__button {
     border-radius: 50%;
     width: 3rem;
     height: 3rem;
+    border: 1px solid #000;
+    cursor: pointer;
 }
 
 .shopped__button {
@@ -118,23 +209,33 @@
     color: white;
 }
 
+.shopped__button>i {
+    pointer-events: none;
+}
+
 
 .total {
     padding: 1rem;
     display: flex;
     align-items: center;
-    justify-content:space-between;
-    background-color: #f0f0f077;
+    justify-content: space-around;
 }
 
 .total__name {
     font-variant: small-caps;
-    font-size: 2.2em;
+    font-size: 1.8em;
     color: #000000e6;
 }
+
 .total__number {
     color: green;
     font-size: 1.4em;
+}
+
+/* Clase aplicada a los elementos eliminados */
+.remove-plate {
+    transform: perspective(500px) translateZ(-10rem) rotateZ(20deg);
+    opacity: 0;
 }
 
 @media (min-width: 1024px) {
@@ -144,34 +245,37 @@
         gap: 2rem;
         padding: 2rem;
     }
+
     .shopped__plate {
         border-radius: 2rem;
-        box-shadow: 0 0 10px rgba(0,0,0,0.7);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
         position: relative;
         flex: 1;
         min-width: 48%;
         max-width: 49%;
     }
+
     .shopped__plate--image {
         border-radius: 2rem 2rem 0 0;
     }
-    .shopped__plate--info, .shopped__plate--price-config {
+
+    .shopped__plate--info,
+    .shopped__plate--price-config {
         padding: 1rem;
     }
+
     .shopped__plate--info {
         margin-bottom: 5rem;
     }
+
     .shopped__plate--price-config {
         position: absolute;
         bottom: 1rem;
         width: 100%;
     }
-    .shopped__description--title, .shopped__extras--title {
+
+    .shopped__description--title,
+    .shopped__extras--title {
         text-align: left;
-    }
-
-
-    .total {
-        padding: 2rem;
     }
 }
