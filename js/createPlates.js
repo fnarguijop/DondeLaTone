@@ -7,6 +7,7 @@ function showPlatillos() {
         const platillosToStoreToArray = JSON.parse(window.localStorage['platillosToStore']);
 
         if (platillosToStoreToArray.length > 0) {
+            let i=0;
             platillosToStoreToArray.forEach(platillo => {
                 /* Se almacena al contendor de todos los platillos */
                 let platesContainer = document.querySelector('.shopped');
@@ -47,7 +48,7 @@ function showPlatillos() {
                 /* Se crea el nombre del plato */
                 const plateName = document.createElement('h2');
                 plateName.classList.add('shopped__name');
-                plateName.innerText = platillo._nombre;
+                plateName.innerText = `${++i} ${platillo._nombre}`;
                 imageTitleContainer.appendChild(plateName);
 
 
@@ -130,7 +131,7 @@ function showPlatillos() {
                 const plateDeleteButton = document.createElement('button');
                 plateDeleteButton.classList.add('shopped__button');
                 plateDeleteButton.title = 'Eliminar';
-                plateDeleteButton.innerHTML = '<i class="fa fa-trash"></i>'
+                plateDeleteButton.innerHTML = '<i class="fa fa-trash"></i>';
                 plateConfigContainer.appendChild(plateDeleteButton);
 
                 /* Evento cuando se le de click al plato en el carrito, este ejecuta la funcion deletePlate */
@@ -154,7 +155,7 @@ function obtenerTotalPlatillos() {
     allPrices.forEach(price => {
         /* Se elimina la L y .00 del precio y se convierte en un numero almacenado en la variable priceInt */
         priceInt = Number(price.innerText.replace('L', '').replace('.00', ''));
-        /* Se van concatenando las sumas de los precios en la variable total, demodo que total valla cambiando su valor en cada iteracion */
+        /* Se van concatenando las sumas de los precios en la variable total, de modo que el total vaya cambiando su valor en cada iteracion */
         total += parseInt(priceInt);
     });
     /* Se obtiene el elemento que contiene el total de la compra */
@@ -171,50 +172,59 @@ function limpiarCarrito() {
     location.reload();
 }
 
-
+/* Se crea un parrafo para advertir que solo se puede eliminar un plato si la opcion de filtrado es todos */
+const cantEliminate = document.createElement('p');
 // Funciones
 /* Funcion para eliminar el platillo que desencadeno el evento */
 function deletePlate(e) {
+    /* se almacena en una variable el objeto que desencadeno el evento */
     const buttonClicked = e.target;
-    const buttonContainer = buttonClicked.parentElement;
-    const platePriceConfig = buttonContainer.parentElement;
-    const plateContainer = platePriceConfig.parentElement;
-    if (buttonClicked.classList.contains('shopped__button')) {
-        /* Se le agrega una clase para animar la manera en la que el elemento se elimina */
-        plateContainer.classList.add('remove-plate');
-        /* Evento que ejecuta una funcion cuando se termine de ejecutar una transicion */
-        plateContainer.addEventListener('transitionend', () => {
-            plateContainer.remove();
+    /* Se accede al contenedor de todo el plato desde el boton */
+    const plateContainer = buttonClicked.parentElement.parentElement.parentElement;
+
+    /* El plato se eliminara solo si el filtrador se encuentra en todos */
+    if(carritoFilter.value == 'todos') {
+        /* Si el boton al que se le de click contiene la clase shopped__button entonces es el de eliminar */
+        if (buttonClicked.classList.contains('shopped__button')) {
+            /* Se le agrega una clase para animar la manera en la que el elemento se elimina */
+            plateContainer.classList.add('remove-plate');
+            /* Evento que ejecuta una funcion cuando se termine de ejecutar una transicion */
+            plateContainer.addEventListener('transitionend', () => {
+                /* Se elimina todo el contenedor del plato */
+                plateContainer.remove();
+            });
+            /* LLama una funcion para eliminarlo del almacenamiento local */
             deleteFromLocalStorage(plateContainer);
-        })
+        }
+    }
+    /* En caso de que el filtrador no se encuentre en todos */
+    else {
+        /* Solo si el boton al que se le da click es el de eliminar */
+        if (buttonClicked.classList.contains('shopped__button')) {
+            /* Se introduce un mensaje para indicar que solo se puede eliminar un plato en todos */
+            cantEliminate.innerHTML = 'Solo se puede eliminar en la opcion de filtrado todos';
+            /* Se le pone un display de bloque */
+            cantEliminate.style.display = 'block';
+            /* Se introduce dentro del contenedor del plato */
+            plateContainer.appendChild(cantEliminate);
+        }
     }
 }
 
 /* Funcion para eliminar el platillo del almacenamiento local */
 function deleteFromLocalStorage(plateToDelete) {
     /* Se accede al nombre del platillo que se desea eliminar */
-    const plateName = plateToDelete.children[0].children[1].innerText;
+    const plateName = plateToDelete.children[0].children[1].innerText.split(' ');
+    const indexPlateToDelete = plateName[0] - 1;
     /* Se almacena en una variable el arreglo del local storage con los objetos creados(platillos añadidos) */
-    const platillosToStoreToArray = JSON.parse(window.localStorage['platillosToStore']);
-
-    /* Se recorre el arreglo y para cada objeto se realiza una comprobacion */
-    platillosToStoreToArray.forEach((platillo) => {
-        /* Si el nombre del objeto actual es igual al nombre del objeto que se desea eliminar */
-        if (plateName === platillo._nombre) {
-            /* Entonces se utiliza el metodo splice para remover un elemento de un array y se especifica el elemento a remover y la cantidad de elementos sucesivos a ese */
-            platillosToStoreToArray.splice(platillosToStoreToArray.indexOf(platillo), 1);
-            /* se accede al indice del platillo que se desea eliminar para que se pueda splice out */
-
-            /* Se reescriben los datos del array en el local storage con la modificacion aplicada */
-            localStorage.setItem('platillosToStore', JSON.stringify(platillosToStoreToArray));
-        }
-    });
-
-    /* Si despues de eliminar el array que contiene los objetos(platillos agregados) vuelve a medir 0 es decir que no cuenta con ningun elemento */
-    if (platillosToStoreToArray.length == 0) {
-        /* Se vuelve a mostrar el mensaje inicial de la pagina de carrito */
-        document.getElementById('initial-message').style.display = 'block';
-    }
+    let platillos = JSON.parse(window.localStorage['platillosToStore']);
+    /* Se le quita con splice al arreglo platillos.
+    se le quita el elemento con el indice indicado en los parentesis del array platillos
+    dentro de los parentesis se especifica que el indice es el numero de platillo-1 porque en los arreglos el indice empieza en 0 y luego se le dice que solo se eliminara 1 elemento
+    */
+    platillos.splice(platillos.indexOf(platillos[indexPlateToDelete]),1);
+    // /* Se vuelve a introducir el arreglo pero ya sin el elemento a eliminar */
+    localStorage.setItem('platillosToStore', JSON.stringify(platillos));
 
     /* Se vuelve a realizar la suma de todos los platillos */
     obtenerTotalPlatillos();
@@ -234,6 +244,8 @@ function filterByCategory(e) {
     /* Se obtiene el arreglo con todos los platillos del almacenamiento local */
     const platillos = JSON.parse(window.localStorage['platillosToStore']);
 
+
+    cantEliminate.style.display = 'none';
     /* Se muestran todos los elementos */
     allPlatesName.forEach(plate => {
         /* Se accede al contenedor de todo el platillo desde su nombre y se muestra */

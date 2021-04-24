@@ -75,7 +75,7 @@ main>p.initial-message {
 /* Cada platillo del carrito */
 .shopped__plate {
     margin-top: 2rem;
-    transition: all 1s linear;
+    transition: opacity 200ms linear;
 }
 
 /* Cada contenedor de la imagen de los platillos */
@@ -221,8 +221,13 @@ main>p.initial-message {
 
 /* Clase aplicada a los elementos eliminados */
 .remove-plate {
-    transform: perspective(500px) translateZ(-10rem) rotateZ(20deg);
     opacity: 0;
+}
+
+/* Estilo a los hijos directos p del contenedor de los platos */
+.shopped__plate>p {
+    padding: 1rem 1rem;
+    font-size: 1.4em;
 }
 
 @media (min-width: 1024px) {
