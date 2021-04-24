@@ -29,7 +29,10 @@
   margin-right: .5em;
 }
 
-.plate-name, .plate-description, .price, .buy-btn {
+.plate-name,
+.plate-description,
+.price,
+.buy-btn {
   position: relative;
   transition: all .5s ease-out;
 }

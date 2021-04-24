@@ -26,11 +26,13 @@
   width: 100%;
   overflow-wrap: break-word;
 }
-.banner-info h1 > a {
+
+.banner-info h1>a {
   color: white;
   text-decoration: none;
 }
-.banner-info h1 > a:hover {
+
+.banner-info h1>a:hover {
   text-decoration: underline;
 }
 
@@ -38,13 +40,15 @@
 .banner-info p {
   font-size: 1.5em;
 }
+
 @media (max-width: 768px) {
-    .banner-image {
-      object-fit: contain;
-    }
-    .banner-info {
-      padding-left: 1em;
-    }
+  .banner-image {
+    object-fit: contain;
+  }
+
+  .banner-info {
+    padding-left: 1em;
+  }
 }
 
 /* INFORMACION DEL BANNER EN TABLET */

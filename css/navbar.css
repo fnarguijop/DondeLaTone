@@ -42,10 +42,11 @@
     z-index: 200;
   }
 
-  .openbtn > i:hover {
+  .openbtn>i:hover {
     color: darkorange;
   }
-  .openbtn > i {
+
+  .openbtn>i {
     transition: color 500ms ease;
   }
 

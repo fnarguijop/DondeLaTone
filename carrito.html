@@ -1,21 +1,22 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donde La Tone - Carrito</title>
-    <!-- LINKS CSS -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Donde La Tone - Carrito</title>
+	<!-- LINKS CSS -->
 	<link rel="stylesheet" href="/css/style.css">
 	<link rel="stylesheet" href="/css/carrito.css">
 	<!-- ICON IMAGE -->
 	<link rel="icon" href="images/icono.png" />
 	<!-- FLATICON -->
-	<link rel="stylesheet"
-		href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body onload="showPlatillos()">
-    <!-- MENU DE NAVEGACION Y BANNER -->
+	<!-- MENU DE NAVEGACION Y BANNER -->
 	<header>
 		<!-- OVERLAY MENU -->
 		<div id="navbarMobile" class="overlay">
@@ -23,10 +24,10 @@
 			<a href="javascript:void(0)" class="closebtn td-none" onclick="closeNav()">&times;</a>
 			<!-- MENU DE NAVEGACION -->
 			<div class="navbar ta-center w-100">
-				<a href="/index.html" class="td-none d-block col-white">Inicio</a>
-				<a href="/menu.html" class="td-none d-block col-white">Menú</a>
-				<a href="/mas.html" class="td-none d-block col-white">Más</a>
-                <a href="/carrito.html" class="td-none d-block col-white selected_link">Carrito</a>
+				<a href="/index.html#index" class="td-none d-block col-white">Inicio</a>
+				<a href="/menu.html#categories" class="td-none d-block col-white">Menú</a>
+				<a href="/mas.html#more" class="td-none d-block col-white">Más</a>
+				<a href="/carrito.html#plates" class="td-none d-block selected_link">Carrito</a>
 			</div>
 		</div>
 		<!-- BOTON ABRIR MENU - MOBILE -->
@@ -38,7 +39,7 @@
 			<div class="banner-info w-100">
 				<!-- TITULO -->
 				<h1 class="col-white">
-					<a href="/index.html">Donde la Tone</a>/<a href="/carrito.html">Carrito</a>
+					<a href="/index.html#index">Donde la Tone</a>/<a href="/carrito.html#plates">Carrito</a>
 				</h1>
 				<!-- DESCRIPCION -->
 				<p class="col-yellow">
@@ -47,15 +48,16 @@
 			</div>
 		</section>
 	</header>
-    <main>
-		<h1 class="ta-center col-dark-red shopped__title">Carrito</h1>
+	<main>
+		<h1 class="ta-center col-dark-red shopped__title" id="plates">Carrito</h1>
 		<div class="carrito-options">
 			<button onclick='limpiarCarrito();'>Limpiar carrito</button>
 			<div class="select">
-				<select name="carrito-filter" id="" disabled>
-					<option value="todos">todos</option>
-					<option value="mas caros">mas caros</option>
-					<option value="mas baratos">mas baratos</option>
+				<select name="carrito-filter" class="carrito-filter" title="filtrar por categoria">
+					<option value="todos" selected>todos</option>
+					<option value="Asados">Asados</option>
+					<option value="Frituras">Frituras</option>
+					<option value="Golosinas">Golosinas</option>
 				</select>
 			</div>
 		</div>
@@ -66,8 +68,8 @@
 			<h2 class="total__name">Total:</h2>
 			<p class="total__number">0</p>
 		</section>
-    </main>
-    <!-- PIE DE PAGINA -->
+	</main>
+	<!-- PIE DE PAGINA -->
 	<footer>
 		<!-- CONTENEDOR COLUMNAS FOOTER -->
 		<div class="d-flex fw-wrap bg-dark-slate-hover">
@@ -80,26 +82,22 @@
 				<!-- LINKS NAVEGACION FOOTER -->
 				<nav class="ls-none d-flex fw-wrap">
 					<li class="link-container">
-						<a href="menu.html#apartadosmenu"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="menu.html#apartadosmenu" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Apartados Menú
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="asados.html"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="asados.html#asados" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Asados
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="frituras.html"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="frituras.html#frituras" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Frituras
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="golosinas.html"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="golosinas.html#golosinas" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Golosinas
 						</a>
 					</li>
@@ -114,23 +112,20 @@
 				<!-- LINKS NAVEGACION FOOTER -->
 				<nav class="ls-none d-flex fw-wrap">
 					<li class="link-container">
-						<a href="https://www.instagram.com/dondelatone/" target="_blank"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="https://www.instagram.com/dondelatone/" target="_blank" class="p-footer-links td-none d-block col-white fs-1-5em">
 							DondeLaTone
 							<i class="fa fa-instagram"></i>
 						</a>
 					</li>
 					<li class="link-container">
 						<a href="https://mail.google.com/mail/u/0/#inbox?compose=SxfkdrHvwLqMhTGGtgjHdBTpDSKKfWVWWJPwHRtTbwGMcrGvDvhNwzrksLrNRlvWsMvkcBqpRFDVRtxjBXqncHDlftPXggrTmMDxtRQvnVZwNgmDhbq"
-							target="_blank"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+							target="_blank" class="p-footer-links td-none d-block col-white fs-1-5em">
 							DondeLaTone
 							<i class="fa fa-envelope"></i>
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="https://www.facebook.com/DondeLaTone" target="_blank"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="https://www.facebook.com/DondeLaTone" target="_blank" class="p-footer-links td-none d-block col-white fs-1-5em">
 							DondeLaTone
 							<i class="fa fa-facebook"></i>
 						</a>
@@ -146,26 +141,22 @@
 				<!-- LINKS NAVEGACION FOOTER -->
 				<nav class="ls-none d-flex fw-wrap">
 					<li class="link-container">
-						<a href="mas.html#ubicacion"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="mas.html#ubicacion" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Nuestra Ubicación
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="index.html#masvendidos"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="index.html#masvendidos" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Platos mas vendidos
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="mas.html#nosotros"x`
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="mas.html#nosotros" x` class="p-footer-links td-none d-block col-white fs-1-5em">
 							Más Información
 						</a>
 					</li>
 					<li class="link-container">
-						<a href="mas.html#horario"
-							class="p-footer-links td-none d-block col-white fs-1-5em">
+						<a href="mas.html#horario" class="p-footer-links td-none d-block col-white fs-1-5em">
 							Horario de Atención
 						</a>
 					</li>

@@ -7,7 +7,7 @@ const platesPrice = document.querySelectorAll('.price');
 
 const platesBuyButton = document.querySelectorAll('.buy-btn');
 
-platesDescription.forEach(function(plateDescription) {
+platesDescription.forEach(function (plateDescription) {
     plateDescription.addEventListener('mouseenter', () => {
         plateDescription.style.transform = 'perspective(500px) translateZ(25px)';
     });
@@ -16,7 +16,7 @@ platesDescription.forEach(function(plateDescription) {
     });
 });
 
-platesName.forEach(function(plateName) {
+platesName.forEach(function (plateName) {
     plateName.addEventListener('mouseenter', () => {
         plateName.style.transform = 'perspective(500px) translateZ(50px)';
     });
@@ -25,7 +25,7 @@ platesName.forEach(function(plateName) {
     });
 });
 
-platesPrice.forEach(function(platePrice) {
+platesPrice.forEach(function (platePrice) {
     platePrice.addEventListener('mouseenter', () => {
         platePrice.style.transform = 'perspective(500px) translateZ(50px)';
     });
@@ -34,7 +34,7 @@ platesPrice.forEach(function(platePrice) {
     });
 });
 
-platesBuyButton.forEach(function(plateBuyButton) {
+platesBuyButton.forEach(function (plateBuyButton) {
     plateBuyButton.addEventListener('mouseenter', () => {
         plateBuyButton.style.transform = 'perspective(500px) translateZ(50px)';
     });

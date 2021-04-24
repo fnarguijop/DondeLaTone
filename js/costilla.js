@@ -5,11 +5,11 @@ let acompañante = FORMULARIO['acompañante'];
 function showChanges() {
     let precio = 0;
     document.getElementById('descripcion').innerHTML = `Costilla de cerdo ${preparacion.value}, acompañada de ${acompañante.value}.`;
-    if(acompañante.value == 'papas') precio = 140;
+    if (acompañante.value == 'papas') precio = 140;
     else precio = 120;
     document.getElementById('precio').innerHTML = `L ${precio}.00`;
     let extra = document.querySelector('extras');
-    extra.addEventListener('click',(e) => {
+    extra.addEventListener('click', (e) => {
         e.target;
     })
 }

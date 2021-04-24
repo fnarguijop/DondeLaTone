@@ -81,10 +81,16 @@ function showPlatillos() {
                 plateExtras.classList.add('shopped__extras');
                 plateExtras.title = 'Extras';
                 let extras = platillo._extras;
-                let extrasArray = extras.split(' ');
-                extrasArray.forEach(extra => {
-                    plateExtras.innerHTML += `<span>${extra}</span>`;
-                });
+                if (extras === '') {
+                    plateExtras.innerText = 'No se ha añadido ningun extra';
+                    plateExtras.style.fontSize = '1.4em';
+                    plateExtras.style.padding = '.5em 0';
+                } else {
+                    let extrasArray = extras.split(' ');
+                    extrasArray.forEach(extra => {
+                        plateExtras.innerHTML += `<span>${extra}</span>`;
+                    });
+                }
 
                 plateInfoContainer.appendChild(plateExtras);
 
@@ -104,7 +110,7 @@ function showPlatillos() {
                 const platePrice = document.createElement('p');
                 platePrice.classList.add('shopped--price');
                 let total = 0;
-                total = parseInt(platillo._precio.replace('L','').replace('.00','')) * parseInt(platillo._cantidad);
+                total = parseInt(platillo._precio.replace('L', '').replace('.00', '')) * parseInt(platillo._cantidad);
                 platePrice.innerText = `L ${total}.00`;
                 platePriceContainer.appendChild(platePrice);
 
@@ -184,6 +190,7 @@ function deletePlate(e) {
     }
 }
 
+/* Funcion para eliminar el platillo del almacenamiento local */
 function deleteFromLocalStorage(plateToDelete) {
     /* Se accede al nombre del platillo que se desea eliminar */
     const plateName = plateToDelete.children[0].children[1].innerText;
@@ -204,7 +211,7 @@ function deleteFromLocalStorage(plateToDelete) {
     });
 
     /* Si despues de eliminar el array que contiene los objetos(platillos agregados) vuelve a medir 0 es decir que no cuenta con ningun elemento */
-    if(platillosToStoreToArray.length == 0) {
+    if (platillosToStoreToArray.length == 0) {
         /* Se vuelve a mostrar el mensaje inicial de la pagina de carrito */
         document.getElementById('initial-message').style.display = 'block';
     }
@@ -212,5 +219,76 @@ function deleteFromLocalStorage(plateToDelete) {
     /* Se vuelve a realizar la suma de todos los platillos */
     obtenerTotalPlatillos();
     /* Se refresca para que se muestren los cambios de la suma */
-    location.reload()
+    location.reload();
+}
+
+/* Se obtiene el select para filtrar los platillos añadidos al carrito */
+const carritoFilter = document.querySelector('.carrito-filter');
+carritoFilter.addEventListener('change', filterByCategory);
+
+/* Funcion para filtrar por categoria */
+function filterByCategory(e) {
+    const filterBy = e.target.value;
+    /* Se obtiene todos los nombres de los platillos agregados al carrito */
+    const allPlatesName = document.querySelectorAll('.shopped__name');
+    /* Se obtiene el arreglo con todos los platillos del almacenamiento local */
+    const platillos = JSON.parse(window.localStorage['platillosToStore']);
+
+    /* Se muestran todos los elementos */
+    allPlatesName.forEach(plate => {
+        /* Se accede al contenedor de todo el platillo desde su nombre y se muestra */
+        plate.parentElement.parentElement.style.display = 'block';
+    });
+
+    /* FILTRADO POR ASADOS */
+    if (filterBy == 'Asados') {
+        /* Se recorre el array del local storage con todos los platillos del carrito */
+        platillos.forEach(platillo => {
+            /* Si el platillo no pertenece a los asados */
+            if (platillo._categoria !== 'Asados') {
+                /* Se recorre el array con los nombres de todos los platillos */
+                allPlatesName.forEach(plate => {
+                    /* Si el nombre del platillo del local storage es igual que el del html */
+                    if (platillo._nombre == plate.innerText) {
+                        /* Se accede al contenedor de todo el platillo desde su nombre y se oculta */
+                        plate.parentElement.parentElement.style.display = 'none';
+                    }
+                });
+            }
+        });
+    }
+    /* FILTRADO POR FRITURAS */
+    if (filterBy == 'Frituras') {
+        /* Se recorre el array del local storage con todos los platillos del carrito */
+        platillos.forEach(platillo => {
+            /* Si el platillo no pertenece a los asados */
+            if (platillo._categoria !== 'Frituras') {
+                /* Se recorre el array con los nombres de todos los platillos */
+                allPlatesName.forEach(plate => {
+                    /* Si el nombre del platillo del local storage es igual que el del html */
+                    if (platillo._nombre == plate.innerText) {
+                        /* Se accede al contenedor de todo el platillo desde su nombre y se oculta */
+                        plate.parentElement.parentElement.style.display = 'none';
+                    }
+                });
+            }
+        });
+    }
+    /* FILTRADO POR GOLOSINAS */
+    if (filterBy == 'Golosinas') {
+        /* Se recorre el array del local storage con todos los platillos del carrito */
+        platillos.forEach(platillo => {
+            /* Si el platillo no pertenece a los asados */
+            if (platillo._categoria !== 'Golosinas') {
+                /* Se recorre el array con los nombres de todos los platillos */
+                allPlatesName.forEach(plate => {
+                    /* Si el nombre del platillo del local storage es igual que el del html */
+                    if (platillo._nombre == plate.innerText) {
+                        /* Se accede al contenedor de todo el platillo desde su nombre y se oculta */
+                        plate.parentElement.parentElement.style.display = 'none';
+                    }
+                });
+            }
+        });
+    }
 }

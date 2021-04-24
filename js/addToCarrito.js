@@ -8,13 +8,19 @@ const descripcion = document.querySelector('.plate-description');
 const extras = document.querySelector('.extras');
 const precio = document.querySelector('.price');
 const cantidadPlatillos = document.querySelector('.quantity');
+
+/* Se obtiene la categoria del plato */
+const bannerInfo = document.querySelector('.banner-info');
+const bannerLinks = bannerInfo.children[0].innerText.split('/');
+const plateCategory = bannerLinks[2];
+console.log(plateCategory)
 // Eventos
 buttonCart.addEventListener('click', addToCarrito);
 
 // Funciones
 function addToCarrito() {
     /* Se agrega al arreglo platillos una instancia de la clase PlatillosComprados */
-    platillos.push(new PlatillosComprados(nombre.innerText, descripcion.innerText, extras.innerText, precio.innerText, cantidadPlatillos.value));
+    platillos.push(new PlatillosComprados(nombre.innerText, descripcion.innerText, extras.innerText, precio.innerText, cantidadPlatillos.value, plateCategory));
     addPlatilloToStorage(platillos);
     document.querySelector('.added__message').style.display = 'block';
 }
